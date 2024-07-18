@@ -1,0 +1,98 @@
+Script started on 2024-07-18 16:16:29+05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="75" LINES="24"]
+[?2004h]0;box@myserver: ~[01;32mbox@myserver[00m:[01;34m~[00m$ uname -r
+[?2004l5.15.0-116-generic
+[?2004h]0;box@myserver: ~[01;32mbox@myserver[00m:[01;34m~[00m$ lsmod
+[?2004lModule                  Size  Used by
+binfmt_misc            24576  1
+intel_rapl_msr         20480  0
+intel_rapl_common      40960  1 intel_rapl_msr
+snd_intel8x0           45056  0
+intel_powerclamp       24576  0
+rapl                   20480  0
+snd_ac97_codec        180224  1 snd_intel8x0
+ac97_bus               16384  1 snd_ac97_codec
+snd_pcm               143360  2 snd_intel8x0,snd_ac97_codec
+joydev                 32768  0
+snd_timer              40960  1 snd_pcm
+input_leds             16384  0
+serio_raw              20480  0
+snd                   106496  4 snd_intel8x0,snd_timer,snd_ac97_codec,snd_pcm
+soundcore              16384  1 snd
+vboxguest              45056  0
+mac_hid                16384  0
+dm_multipath           40960  0
+sch_fq_codel           20480  2
+scsi_dh_rdac           20480  0
+scsi_dh_emc            16384  0
+scsi_dh_alua           20480  0
+msr                    16384  0
+efi_pstore             16384  0
+ip_tables              32768  0
+x_tables               53248  1 ip_tables
+autofs4                49152  2
+btrfs                1564672  0
+blake2b_generic        20480  0
+zstd_compress         229376  1 btrfs
+raid10                 69632  0
+raid456               163840  0
+async_raid6_recov      24576  1 raid456
+async_memcpy           20480  2 raid456,async_raid6_recov
+async_pq               24576  2 raid456,async_raid6_recov
+async_xor              20480  3 async_pq,raid456,async_raid6_recov
+async_tx               20480  5 async_pq,async_memcpy,async_xor,raid456,async_raid6_recov
+xor                    24576  2 async_xor,btrfs
+raid6_pq              122880  4 async_pq,btrfs,raid456,async_raid6_recov
+libcrc32c              16384  2 btrfs,raid456
+raid1                  49152  0
+raid0                  24576  0
+multipath              20480  0
+linear                 20480  0
+crct10dif_pclmul       16384  1
+crc32_pclmul           16384  0
+ghash_clmulni_intel    16384  0
+sha256_ssse3           32768  0
+sha1_ssse3             32768  0
+vmwgfx                372736  1
+ttm                    86016  1 vmwgfx
+drm_kms_helper        311296  1 vmwgfx
+syscopyarea            16384  1 drm_kms_helper
+sysfillrect            20480  1 drm_kms_helper
+sysimgblt              16384  1 drm_kms_helper
+fb_sys_fops            16384  1 drm_kms_helper
+cec                    61440  1 drm_kms_helper
+aesni_intel           376832  0
+rc_core                65536  1 cec
+hid_generic            16384  0
+crypto_simd            16384  1 aesni_intel
+cryptd                 24576  2 crypto_simd,ghash_clmulni_intel
+usbhid                 65536  0
+drm                   622592  4 vmwgfx,drm_kms_helper,ttm
+psmouse               176128  0
+ahci                   49152  2
+libahci                49152  1 ahci
+i2c_piix4              32768  0
+hid                   151552  2 usbhid,hid_generic
+e1000                 159744  0
+pata_acpi              16384  0
+video                  65536  0
+[?2004h]0;box@myserver: ~[01;32mbox@myserver[00m:[01;34m~[00m$ [K]0;box@myserver: ~[01;32mbox@myserver[00m:[01;34m~[00m$ [K]0;box@myserver: ~[01;32mbox@myserver[00m:[01;34m~[00m$ ap[K[Ksudo apt install htop
+[?2004l[sudo] password for box: 
+Reading package lists... 0%Reading package lists... 0%Reading package lists... 20%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+htop is already the newest version (3.0.5-7build2).
+htop set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 31 not upgraded.
+[?2004h]0;box@myserver: ~[01;32mbox@myserver[00m:[01;34m~[00m$ htop
+[?2004l[?1049h[22;0;0t[1;36r(B[m[4l[?7h[?1h=[?25l[39;49m[?1006;1000h[39;49m(B[m[H[2J[2d  [36mCPU[39m(B[0;1m[[90m[56X[2;63H0.0%[39m](B[m   [36mTasks: (B[0;1m[36m28(B[0m[36m, (B[0;1m[32m25(B[0m[32m thr[36m; (B[0;1m[32m1(B[0m[36m running[3;3HMem[39m(B[0;1m[(B[0m[32m||||||[34m|[33m|||||||||(B[0;1m[90m[34X[3;57H207M/2.36G[39m](B[m   [36mLoad average: [39m(B[0;1m0.07 [36m0.02 (B[0m[36m0.00 [4;3HSwp[39m(B[0;1m[[90m[52X[4;59H0K/1.32G[39m](B[m   [36mUptime: (B[0;1m[36m00:18:54[6d(B[0m[30m[42m    PID USER      PRI  NI  VIRT   RES   SHR S [30m[46mCPU%▽[30m[42mMEM%   TIME+  Command[K[7;6H[30m[46m[1K 1 root       20   0  162M 11472  8160 S  0.0  0.5  0:01.60 /sbin/init[K[8;5H[39;49m(B[m378 (B[0;1m[90mroot      [39m(B[m 19 [31m -1 [36m47[39m(B[m876 [36m14[39m(B[m628 [36m13[39m(B[m516 S  0.0  0.6  0:00.26 /lib/systemd/systemd-journald[9;5H415 (B[0;1m[90mroot      [39m(B[m RT   0 [36m 282M 27[39m(B[m236 [36m 9[39m(B[m072 S  0.0  1.1  0:00.23 /sbin/multipathd -d -s[10;5H417 (B[0;1m[90mroot      [39m(B[m 20   0 [36m26[39m(B[m020 [36m 6[39m(B[m912 [36m 4[39m(B[m668 S  0.0  0.3  0:00.16 /lib/systemd/systemd-udevd[11;5H419 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 282M 27[39m(B[m236 [36m 9[39m(B[m072 S  0.0  1.1  0:00.00 [32m/sbin/multipathd -d -s[12;5H[39m(B[m421 (B[0;1m[90mroot      [39m(B[m RT   0 [36m 282M 27[39m(B[m236 [36m 9[39m(B[m072 S  0.0  1.1  0:00.00 [32m/sbin/multipathd -d -s[13;5H[39m(B[m422 (B[0;1m[90mroot      [39m(B[m RT   0 [36m 282M 27[39m(B[m236 [36m 9[39m(B[m072 S  0.0  1.1  0:00.00 [32m/sbin/multipathd -d -s[14;5H[39m(B[m423 (B[0;1m[90mroot      [39m(B[m RT   0 [36m 282M 27[39m(B[m236 [36m 9[39m(B[m072 S  0.0  1.1  0:00.00 [32m/sbin/multipathd -d -s[15;5H[39m(B[m424 (B[0;1m[90mroot      [39m(B[m RT   0 [36m 282M 27[39m(B[m236 [36m 9[39m(B[m072 S  0.0  1.1  0:00.16 [32m/sbin/multipathd -d -s[16;5H[39m(B[m425 (B[0;1m[90mroot      [39m(B[m RT   0 [36m 282M 27[39m(B[m236 [36m 9[39m(B[m072 S  0.0  1.1  0:00.00 [32m/sbin/multipathd -d -s[17;5H[39m(B[m584 (B[0;1m[90msystemd-t [39m(B[m 20   0 [36m89[39m(B[m364 [36m 6[39m(B[m576 [36m 5[39m(B[m768 S  0.0  0.3  0:00.09 /lib/systemd/systemd-timesyncd[18;5H594 (B[0;1m[90msystemd-t [39m(B[m 20   0 [36m89[39m(B[m364 [36m 6[39m(B[m576 [36m 5[39m(B[m768 S  0.0  0.3  0:00.00 [32m/lib/systemd/systemd-timesyncd[19;5H[39m(B[m625 (B[0;1m[90msystemd-n [39m(B[m 20   0 [36m16[39m(B[m128 [36m 8[39m(B[m112 [36m 7[39m(B[m100 S  0.0  0.3  0:00.08 /lib/systemd/systemd-networkd[20;5H627 (B[0;1m[90msystemd-r [39m(B[m 20   0 [36m25[39m(B[m540 [36m12[39m(B[m640 [36m 8[39m(B[m452 S  0.0  0.5  0:00.09 /lib/systemd/systemd-resolved[21;5H639 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 6[39m(B[m896 [36m 3[39m(B[m032 [36m 2[39m(B[m788 S  0.0  0.1  0:00.00 /usr/sbin/cron -f -P[22;5H640 (B[0;1m[90mmessagebu [39m(B[m 20   0 [36m 8[39m(B[m776 [36m 5[39m(B[m024 [36m 4[39m(B[m196 S  0.0  0.2  0:00.10 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-act[23;5H646 (B[0;1m[90mroot      [39m(B[m 20   0 [36m32[39m(B[m736 [36m19[39m(B[m080 [36m10[39m(B[m456 S  0.0  0.8  0:00.11 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers[24;5H647 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 229M  6[39m(B[m716 [36m 6[39m(B[m064 S  0.0  0.3  0:00.04 /usr/libexec/polkitd --no-debug[25;5H648 (B[0;1m[90msyslog    [39m(B[m 20   0 [36m 217M  5[39m(B[m564 [36m 4[39m(B[m488 S  0.0  0.2  0:00.03 /usr/sbin/rsyslogd -n -iNONE[26;5H651 (B[0;1m[90mroot      [39m(B[m 20   0 [32m1[36m144M 26[39m(B[m860 [36m18[39m(B[m404 S  0.0  1.1  0:01.88 /usr/lib/snapd/snapd[27;5H655 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 383M 12[39m(B[m540 [36m10[39m(B[m460 S  0.0  0.5  0:00.19 /usr/libexec/udisks2/udisksd[28;5H659 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 7[39m(B[m832 [36m 4[39m(B[m816 [36m 3[39m(B[m916 S  0.0  0.2  0:00.03 /bin/login -p --[29;5H666 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 229M  6[39m(B[m716 [36m 6[39m(B[m064 S  0.0  0.3  0:00.00 [32m/usr/libexec/polkitd --no-debug[30;5H[39m(B[m670 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 383M 12[39m(B[m540 [36m10[39m(B[m460 S  0.0  0.5  0:00.00 [32m/usr/libexec/udisks2/udisksd[31;5H[39m(B[m673 (B[0;1m[90msyslog    [39m(B[m 20   0 [36m 217M  5[39m(B[m564 [36m 4[39m(B[m488 S  0.0  0.2  0:00.01 [32m/usr/sbin/rsyslogd -n -iNONE[32;5H[39m(B[m674 (B[0;1m[90msyslog    [39m(B[m 20   0 [36m 217M  5[39m(B[m564 [36m 4[39m(B[m488 S  0.0  0.2  0:00.00 [32m/usr/sbin/rsyslogd -n -iNONE[33;5H[39m(B[m679 (B[0;1m[90msyslog    [39m(B[m 20   0 [36m 217M  5[39m(B[m564 [36m 4[39m(B[m488 S  0.0  0.2  0:00.01 [32m/usr/sbin/rsyslogd -n -iNONE[34;5H[39m(B[m687 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 229M  6[39m(B[m716 [36m 6[39m(B[m064 S  0.0  0.3  0:00.01 [32m/usr/libexec/polkitd --no-debug[35;5H[39m(B[m689 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 383M 12[39m(B[m540 [36m10[39m(B[m460 S  0.0  0.5  0:00.00 [32m/usr/libexec/udisks2/udisksd[36d[39m(B[mF1[30m[46mHelp  [39;49m(B[mF2[30m[46mSetup [39;49m(B[mF3[30m[46mSearch[39;49m(B[mF4[30m[46mFilter[39;49m(B[mF5[30m[46mTree  [39;49m(B[mF6[30m[46mSortBy[39;49m(B[mF7[30m[46mNice -[39;49m(B[mF8[30m[46mNice +[39;49m(B[mF9[30m[46mKill  [39;49m(B[mF10[30m[46mQuit[K[H[39;49m(B[m[7;35r[7;1HM[1;36r[2;7H[31m||[2;63H(B[0;1m[90m2[4;86H[36m5[7d(B[0m[30m[46m   1499 box        20   0  8244  4416  3500 R  0.7  0.2  0:00.05 htop[K[8;6H[39;49m(B[m[1K 1 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 162M 11[39m(B[m472 [36m 8[39m(B[m160 S  0.0  0.5  0:01.60 /sbin/init[K[H[2;8H(B[0;1m[90m [2;63H1.4[4;86H[36m7[7;64H(B[0m[30m[46m6[H[39;49m(B[m[2;7H[32m|[31m|[2;65H(B[0;1m[90m3[4;86H[36m8[7;64H(B[0m[30m[46m7[H[39;49m(B[m[2;7H[31m|[2;63H(B[0;1m[90m2.7[4;83H[36m9:00[7;64H(B[0m[30m[46m8[H[39;49m(B[m[2;8H(B[0;1m[90m [2;63H0[3;88H[39m6[4;86H[36m1[7;64H(B[0m[30m[46m9[H[39;49m(B[m[8;35r[8;1HM[1;36r[2;7H[32m|[31m|[2;63H(B[0;1m[90m2.0[4;86H[36m3[7;6H(B[0m[30m[46m27[7;27H17312  8124  5720 S[7;55H3[7;64H5 sshd: box@pts/0[8;4H[39;49m(B[m1499 box[8;20H20   0 [36m 8[39m(B[m244 [36m 4[39m(B[m416 [36m 3[39m(B[m500 [32mR [39m(B[m 0.7  0.2  0:00.10 htop[H[8;35r[35;1H
+[1;36r[2;7H[31m|(B[0;1m[90m [2;63H1.4[4;86H[36m4[7;6H(B[0m[30m[46m99[7;27H 8244  4416  3500 R[7;55H2[63G11 htop[K[35;5H[39;49m(B[m687 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 229M  6[39m(B[m716 [36m 6[39m(B[m064 S  0.0  0.3  0:00.01 [32m/usr/libexec/polkitd --no-debug[H[39m(B[m[2;8H[31m|[2;63H(B[0;1m[90m2.0[3;93H[36m1[4;86H6[7;64H(B[0m[30m[46m2[H[39;49m(B[m[7;35r[35;1H
+[1;36r[4;86H(B[0;1m[36m8[7;6H(B[0m[30m[46m[1K 1 root       20   0  162M 11472  8160 S  0.0  0.5  0:01.60 /sbin/init[K[35;5H[39;49m(B[m689 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 383M 12[39m(B[m540 [36m10[39m(B[m460 S  0.0  0.5  0:00.00 [32m/usr/libexec/udisks2/udisksd[H[39m(B[m[7;35r[7;1HM[1;36r[2;7H[32m|(B[0;1m[90m [2;63H0.7[4;86H[36m9[7d(B[0m[30m[46m   1499 box        20   0  8244  4416  3500 R  0.7  0.2  0:00.13 htop[K[8;6H[39;49m(B[m[1K 1 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 162M 11[39m(B[m472 [36m 8[39m(B[m160 S  0.0  0.5  0:01.60 /sbin/init[K[H[7;35r[35;1H
+[1;36r[2;7H(B[0;1m[90m [2;65H0[4;85H[36m11[7;6H(B[0m[30m[46m[1K 1 root       20   0  162M 11472  8160 S  0.0  0.5  0:01.60 /sbin/init[K[35;5H[39;49m(B[m689 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 383M 12[39m(B[m540 [36m10[39m(B[m460 S  0.0  0.5  0:00.00 [32m/usr/libexec/udisks2/udisksd[H[39m(B[m[7;35r[7;1HM[1;36r[2;7H[32m|[2;65H(B[0;1m[90m7[3;88H[39m5[4;86H[36m2[7d(B[0m[30m[46m   1499 box        20   0  8244  4416  3500 R  0.7  0.2  0:00.14 htop[K[8;6H[39;49m(B[m[1K 1 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 162M 11[39m(B[m472 [36m 8[39m(B[m160 S  0.0  0.5  0:01.60 /sbin/init[K[H[2;7H(B[0;1m[90m [2;65H0[4;86H[36m4[7;64H(B[0m[30m[46m5[H[39;49m(B[m[2;7H[31m|[2;63H(B[0;1m[90m1.4[4;86H[36m5[7;6H(B[0m[30m[46m3[7;28H5788  1160  1068 S[7;55H0[63G02 script 2task.txt[H[39;49m(B[m[2;7H(B[0;1m[90m [2;63H0.0[4;86H[36m7[7;6H(B[0m[30m[46m9[7;28H8244  4416  3500 R[7;55H2[63G16 htop[K[H[39;49m(B[m[8;16r[8;1HM[1;36r[2;7H[31m|[2;63H(B[0;1m[90m1.4[4;86H[36m8[7;4H(B[0m[30m[46m 424 root[20GRT[28G282M 27236  9072 S[53G1.1[7;64H7 /sbin/multipathd -d -s[8;4H[39;49m(B[m1499 box[8;20H20   0 [36m 8[39m(B[m244 [36m 4[39m(B[m416 [36m 3[39m(B[m500 [32mR [39m(B[m 0.7  0.2  0:00.17 htop[H[4;86H(B[0;1m[36m9[7d[39m(B[m    424 (B[0;1m[90mroot      [39m(B[m RT   0 [36m 282M 27[39m(B[m236 [36m 9[39m(B[m072 S  0.7  1.1  0:00.17 [32m/sbin/multipathd -d -s[39m(B[m[K[17d[30m[46m    425 root       RT   0  282M 27236  9072 S  0.0  1.1  0:00.00 /sbin/multipathd -d -s[K[H[39;49m(B[m[2;63H(B[0;1m[90m0.9[4;85H[36m20[7;50H[39m(B[m0[8d5[8;64H8[H[7;35r[35;1H[10S[1;36r[7;1H    425 (B[0;1m[90mroot      [39m(B[m RT   0 [36m 282M 27[39m(B[m236 [36m 9[39m(B[m072 S  0.0  1.1  0:00.00 [32m/sbin/multipathd -d -s[39m(B[m[K[17d[30m[46m    651 root       20   0 1144M 26860 18404 S  0.0  1.1  0:01.88 /usr/lib/snapd/snapd[K[26;5H[39;49m(B[m689 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 383M 12[39m(B[m540 [36m10[39m(B[m460 S  0.0  0.5  0:00.00 [32m/usr/libexec/udisks2/udisksd[27;5H[39m(B[m690 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 310M 12[39m(B[m024 [36m10[39m(B[m116 S  0.0  0.5  0:00.11 /usr/sbin/ModemManager[28;5H693 (B[0;1m[90mroot      [39m(B[m 20   0 [36m15[39m(B[m436 [36m 9[39m(B[m316 [36m 7[39m(B[m680 S  0.0  0.4  0:00.02 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups[29;5H697 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 383M 12[39m(B[m540 [36m10[39m(B[m460 S  0.0  0.5  0:00.00 [32m/usr/libexec/udisks2/udisksd[30;5H[39m(B[m699 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 310M 12[39m(B[m024 [36m10[39m(B[m116 S  0.0  0.5  0:00.00 [32m/usr/sbin/ModemManager[31;5H[39m(B[m702 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 310M 12[39m(B[m024 [36m10[39m(B[m116 S  0.0  0.5  0:00.01 [32m/usr/sbin/ModemManager[32;5H[39m(B[m705 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 107M 21[39m(B[m456 [36m13[39m(B[m324 S  0.0  0.9  0:00.10 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown[33;5H711 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 383M 12[39m(B[m540 [36m10[39m(B[m460 S  0.0  0.5  0:00.00 [32m/usr/libexec/udisks2/udisksd[34;5H[39m(B[m714 (B[0;1m[90mroot      [39m(B[m 20   0 [36m 107M 21[39m(B[m456 [36m13[39m(B[m324 S  0.0  0.9  0:00.00 [32m/usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown[35;5H[39m(B[m716 (B[0;1m[90mroot      [39m(B[m 20   0 [32m1[36m144M 26[39m(B[m860 [36m18[39m(B[m404 S  0.0  1.1  0:00.05 [32m/usr/lib/snapd/snapd[H[39m(B[m[7;35r[35;1H[10S[1;36r[7;1H    651 (B[0;1m[90mroot      [39m(B[m 20   0 [32m1[36m144M 26[39m(B[m860 [36m18[39m(B[m404 S  0.0  1.1  0:01.88 /usr/lib/snapd/snapd[K[17d[30m[46m    690 root       20   0  310M 12024 10116 S  0.0  0.5  0:00.11 /usr/sbin/ModemManager[K[26;5H[39;49m(B[m718 (B[0;1m[90mroot      [39m(B[m 20   0 [32m1[36m144M 26[39m(B[m860 [36m18[39m(B[m404 S  0.0  1.1  0:00.11 [32m/usr/lib/snapd/snapd[27;5H[39m(B[m719 (B[0;1m[90mroot      [39m(B[m 20   0 [32m1[36m144M 26[39m(B[m860 [36m18[39m(B[m404 S  0.0  1.1  0:00.00 [32m/usr/lib/snapd/snapd[28;5H[39m(B[m720 (B[0;1m[90mroot      [39m(B[m 20   0 [32m1[36m144M 26[39m(B[m860 [36m18[39m(B[m404 S  0.0  1.1  0:00.00 [32m/usr/lib/snapd/snapd[29;5H[39m(B[m731 (B[0;1m[90mroot      [39m(B[m 20   0 [32m1[36m144M 26[39m(B[m860 [36m18[39m(B[m404 S  0.0  1.1  0:00.02 [32m/usr/lib/snapd/snapd[30;5H[39m(B[m732 (B[0;1m[90mroot      [39m(B[m 20   0 [32m1[36m144M 26[39m(B[m860 [36m18[39m(B[m404 S  0.0  1.1  0:00.04 [32m/usr/lib/snapd/snapd[31;5H[39m(B[m935 box[31;20H20   0 [36m17[39m(B[m092 [36m 9[39m(B[m856 [36m 8[39m(B[m184 S  0.0  0.4  0:00.11 /lib/systemd/systemd --user[32;5H936 box[32;20H20   0 [36m 101M  3[39m(B[m768    16 S  0.0  0.2  0:00.00 (sd-pam)[33;5H942 box[33;20H20   0 [36m 8[39m(B[m744 [36m 5[39m(B[m536 [36m 3[39m(B[m780 S  0.0  0.2  0:00.02 -bash[34;4H1050 (B[0;1m[90mroot      [39m(B[m 20   0 [36m23[39m(B[m688 [36m 7[39m(B[m876 [36m 6[39m(B[m884 S  0.0  0.3  0:00.09 /lib/systemd/systemd-logind[35;4H1372 (B[0;1m[90mroot      [39m(B[m 20   0 [36m17[39m(B[m180 [36m11[39m(B[m028 [36m 8[39m(B[m860 S  0.0  0.4  0:00.03 sshd: box [priv][H[36d[J[?12l[?25h[?1006;1000l[36;1H[?1049l[23;0;0t[?1l>[?2004h]0;box@myserver: ~[01;32mbox@myserver[00m:[01;34m~[00m$ н[Kyop[K[K[Ktop &
+[?2004l[1] 1501
+[?2004h]0;box@myserver: ~[01;32mbox@myserver[00m:[01;34m~[00m$ [?1l>kill -9 [7m1501[27m1501
+[?2004l
+[1]+  Stopped                 top
+[?2004h]0;box@myserver: ~[01;32mbox@myserver[00m:[01;34m~[00m$ exit
+[?2004lexit
+
+Script done on 2024-07-18 16:20:05+05:00 [COMMAND_EXIT_CODE="0"]
