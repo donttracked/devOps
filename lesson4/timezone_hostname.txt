@@ -1,0 +1,383 @@
+Script started on 2024-07-18 11:00:39+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="75" LINES="24"]
+[?2004h]0;box@server: ~[01;32mbox@server[00m:[01;34m~[00m$ hostname
+[?2004lserver
+[?2004h]0;box@server: ~[01;32mbox@server[00m:[01;34m~[00m$ hostname -[Kmt[Kyserver
+[?2004lhostname: you must be root to change the host name
+[?2004h]0;box@server: ~[01;32mbox@server[00m:[01;34m~[00m$ hostname myserver[1@s[1@u[1@d[1@o[1@ 
+[?2004l[sudo] password for box: 
+[?2004h]0;box@server: ~[01;32mbox@server[00m:[01;34m~[00m$ sudo hostname myserver[C[C[C[C[C[C[C[C[C[C[C[C[C[C[5P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[?2004lmyserver
+[?2004h]0;box@server: ~[01;32mbox@server[00m:[01;34m~[00m$ sd[Kudo nano e[K/etc/hosts[Kname 
+[?2004l[?2004h[?1049h[22;0;0t[1;24r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[22;31H(B[0;7m[ Reading... ](B[m[22;37H(B[0;7m 1 line ](B[m[H(B[0;7m  GNU nano 6.2                   /etc/hostname                             [1;74H(B[m[23d(B[0;7m^G(B[m Help[23;16H(B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut[23;61H(B[0;7m^T(B[m Execute[24d(B[0;7m^X(B[m Exit[24;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify[2dserver[?12l[?25h[?25l[1;48H(B[0;7m*[74G(B[m[?12l[?25h[2dmserverm[?25l[?12l[?25hyservermy[?25l[22d(B[0;7mSave modified buffer?                                                      [23;1H Y(B[m Yes[K[24d(B[0;7m N(B[m No  [24;16H (B[0;7m^C(B[m Cancel[K[22;23H[?12l[?25h[?25l[23d(B[0;7m^G(B[m Help[23;19H(B[0;7mM-D(B[m DOS Format    (B[0;7mM-A(B[m Append[23;55H(B[0;7mM-B(B[m Backup File[24d(B[0;7m^C(B[m Cancel[17G  (B[0;7mM-M(B[m Mac Format    (B[0;7mM-P(B[m Prepend[55G(B[0;7m^T(B[m Browse[22d(B[0;7mFile Name to Write: /etc/hostname(B[m[?12l[?25h[?25l[1K (B[0;7m[ Writing... ](B[m[K[1;48H(B[0;7m [74G(B[m[22;30H(B[0;7m[ Wrote 1 line ](B[m[J[24d[?12l[?25h[24;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;box@server: ~[01;32mbox@server[00m:[01;34m~[00m$ sudo nano /etc/hostname [C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[7msudo nano /etc/hosts[27m
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[Csudo nano /etc/hosts
+][K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[?2004h[?1049h[22;0;0t[1;24r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[22;31H(B[0;7m[ Reading... ](B[m[22;30H(B[0;7m[ Read 9 lines ](B[m[H(B[0;7m  GNU nano 6.2                     /etc/hosts                              [1;74H(B[m[23d(B[0;7m^G(B[m Help[23;16H(B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut[23;61H(B[0;7m^T(B[m Execute[24d(B[0;7m^X(B[m Exit[24;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify[2d127.0.0.1 localhost[3d127.0.1.1 server[5d[36m# The following lines are desirable for IPv6 capable hosts[6d[39m(B[m::1     ip6-localhost ip6-loopback[7dfe00::0 ip6-localnet[8dff00::0 ip6-mcastprefix[9dff02::1 ip6-allnodes[10dff02::2 ip6-allrouters[2d[?12l[?25h[?25l[?12l[?25h[3d[?25l[?12l[?25h1[?25l[?12l[?25h2[?25l[?12l[?25h7[?25l[?12l[?25h.[?25l[?12l[?25h0[?25l[?12l[?25h.[?25l[?12l[?25h1[?25l[?12l[?25h.[?25l[?12l[?25h1[?25l[?12l[?25h [?25l[1;47H(B[0;7m*[74G(B[m[?12l[?25h[3;11Hmserver[12G[?25l[?12l[?25hyserver[13G[?25l[22d(B[0;7mSave modified buffer?                                                      [23;1H Y(B[m Yes[K[24d(B[0;7m N(B[m No  [24;16H (B[0;7m^C(B[m Cancel[K[22;23H[?12l[?25h[?25l[23d(B[0;7m^G(B[m Help[23;19H(B[0;7mM-D(B[m DOS Format    (B[0;7mM-A(B[m Append[23;55H(B[0;7mM-B(B[m Backup File[24d(B[0;7m^C(B[m Cancel[17G  (B[0;7mM-M(B[m Mac Format    (B[0;7mM-P(B[m Prepend[55G(B[0;7m^T(B[m Browse[22d(B[0;7mFile Name to Write: /etc/hosts(B[m[?12l[?25h[?25l[1K (B[0;7m[ Writing... ](B[m[K[1;47H(B[0;7m [74G(B[m[22;30H(B[0;7m[ Wrote 9 lines ](B[m[J[24d[?12l[?25h[24;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;box@server: ~[01;32mbox@server[00m:[01;34m~[00m$ exit
+[?2004lexit
+
+Script done on 2024-07-18 11:02:27+00:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2024-07-18 11:05:38+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="140" LINES="36"]
+[?2004h]0;box@myserver: ~[01;32mbox@myserver[00m:[01;34m~[00m$ [7mtimedatectl list-timezones[27m
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctimedatectl list-timezones
+[A
+[?2004l[?1h=Africa/Abidjan[m
+Africa/Accra[m
+Africa/Addis_Ababa[m
+Africa/Algiers[m
+Africa/Asmara[m
+Africa/Asmera[m
+Africa/Bamako[m
+Africa/Bangui[m
+Africa/Banjul[m
+Africa/Bissau[m
+Africa/Blantyre[m
+Africa/Brazzaville[m
+Africa/Bujumbura[m
+Africa/Cairo[m
+Africa/Casablanca[m
+Africa/Ceuta[m
+Africa/Conakry[m
+Africa/Dakar[m
+Africa/Dar_es_Salaam[m
+Africa/Djibouti[m
+Africa/Douala[m
+Africa/El_Aaiun[m
+Africa/Freetown[m
+Africa/Gaborone[m
+Africa/Harare[m
+Africa/Johannesburg[m
+Africa/Juba[m
+Africa/Kampala[m
+Africa/Khartoum[m
+Africa/Kigali[m
+Africa/Kinshasa[m
+Africa/Lagos[m
+Africa/Libreville[m
+Africa/Lome[m
+Africa/Luanda[m
+[7mlines 1-35[27m[K[KAfrica/Lubumbashi[m
+[7mlines 2-36[27m[K[KAfrica/Lusaka[m
+[7mlines 3-37[27m[K[KAfrica/Malabo[m
+[7mlines 4-38[27m[K[KAfrica/Maputo[m
+[7mlines 5-39[27m[K[KAfrica/Maseru[m
+[7mlines 6-40[27m[K[KAfrica/Mbabane[m
+[7mlines 7-41[27m[K[KAfrica/Mogadishu[m
+[7mlines 8-42[27m[K[KAfrica/Monrovia[m
+[7mlines 9-43[27m[K[KAfrica/Nairobi[m
+[7mlines 10-44[27m[K[KAfrica/Ndjamena[m
+[7mlines 11-45[27m[K[KAfrica/Niamey[m
+[7mlines 12-46[27m[K[KAfrica/Nouakchott[m
+[7mlines 13-47[27m[K[KAfrica/Ouagadougou[m
+[7mlines 14-48[27m[K[KAfrica/Porto-Novo[m
+[7mlines 15-49[27m[K[KAfrica/Sao_Tome[m
+[7mlines 16-50[27m[K[KAfrica/Timbuktu[m
+[7mlines 17-51[27m[K[KAfrica/Tripoli[m
+[7mlines 18-52[27m[K[KAfrica/Tunis[m
+[7mlines 19-53[27m[K[KAfrica/Windhoek[m
+[7mlines 20-54[27m[K[KAmerica/Adak[m
+[7mlines 21-55[27m[K[KAmerica/Anchorage[m
+[7mlines 22-56[27m[K[KAmerica/Anguilla[m
+[7mlines 23-57[27m[K[KAmerica/Antigua[m
+[7mlines 24-58[27m[K[KAmerica/Araguaina[m
+[7mlines 25-59[27m[K[KAmerica/Argentina/Buenos_Aires[m
+[7mlines 26-60[27m[K[KAmerica/Argentina/Catamarca[m
+[7mlines 27-61[27m[K[KAmerica/Argentina/ComodRivadavia[m
+[7mlines 28-62[27m[K[KAmerica/Argentina/Cordoba[m
+[7mlines 29-63[27m[K[KAmerica/Argentina/Jujuy[m
+[7mlines 30-64[27m[K[KAmerica/Argentina/La_Rioja[m
+[7mlines 31-65[27m[K[KAmerica/Argentina/Mendoza[m
+[7mlines 32-66[27m[K[KAmerica/Argentina/Rio_Gallegos[m
+[7mlines 33-67[27m[K[KAmerica/Argentina/Salta[m
+[7mlines 34-68[27m[K[KAmerica/Argentina/San_Juan[m
+[7mlines 35-69[27m[K[KAmerica/Argentina/San_Luis[m
+[7mlines 36-70[27m[K[KAmerica/Argentina/Tucuman[m
+[7mlines 37-71[27m[K[KAmerica/Argentina/Ushuaia[m
+[7mlines 38-72[27m[K[KAmerica/Aruba[m
+[7mlines 39-73[27m[K[KAmerica/Asuncion[m
+[7mlines 40-74[27m[K[KAmerica/Atikokan[m
+[7mlines 41-75[27m[K[KAmerica/Atka[m
+[7mlines 42-76[27m[K[KAmerica/Bahia[m
+[7mlines 43-77[27m[K[KAmerica/Bahia_Banderas[m
+[7mlines 44-78[27m[K[KAmerica/Barbados[m
+[7mlines 45-79[27m[K[KAmerica/Belem[m
+[7mlines 46-80[27m[K[KAmerica/Belize[m
+[7mlines 47-81[27m[K[KAmerica/Blanc-Sablon[m
+[7mlines 48-82[27m[K[KAmerica/Boa_Vista[m
+[7mlines 49-83[27m[K[KAmerica/Bogota[m
+[7mlines 50-84[27m[K[KAmerica/Boise[m
+[7mlines 51-85[27m[K[KAmerica/Buenos_Aires[m
+[7mlines 52-86[27m[K[KAmerica/Cambridge_Bay[m
+[7mlines 53-87[27m[K[KAmerica/Campo_Grande[m
+[7mlines 54-88[27m[K[KAmerica/Cancun[m
+[7mlines 55-89[27m[K[KAmerica/Caracas[m
+[7mlines 56-90[27m[K[KAmerica/Catamarca[m
+[7mlines 57-91[27m[K[KAmerica/Cayenne[m
+[7mlines 58-92[27m[K[KAmerica/Cayman[m
+[7mlines 59-93[27m[K[KAmerica/Chicago[m
+[7mlines 60-94[27m[K[KAmerica/Chihuahua[m
+[7mlines 61-95[27m[K[KAmerica/Ciudad_Juarez[m
+[7mlines 62-96[27m[K[KAmerica/Coral_Harbour[m
+[7mlines 63-97[27m[K[KAmerica/Cordoba[m
+[7mlines 64-98[27m[K[KAmerica/Costa_Rica[m
+[7mlines 65-99[27m[K[KAmerica/Creston[m
+[7mlines 66-100[27m[K[KAmerica/Cuiaba[m
+[7mlines 67-101[27m[K[KAmerica/Curacao[m
+[7mlines 68-102[27m[K[KAmerica/Danmarkshavn[m
+[7mlines 69-103[27m[K[KAmerica/Dawson[m
+[7mlines 70-104[27m[K[KAmerica/Dawson_Creek[m
+[7mlines 71-105[27m[K[KAmerica/Denver[m
+[7mlines 72-106[27m[K[KAmerica/Detroit[m
+[7mlines 73-107[27m[K[KAmerica/Dominica[m
+[7mlines 74-108[27m[K[KAmerica/Edmonton[m
+[7mlines 75-109[27m[K[KAmerica/Eirunepe[m
+[7mlines 76-110[27m[K[KAmerica/El_Salvador[m
+[7mlines 77-111[27m[K[KAmerica/Ensenada[m
+[7mlines 78-112[27m[K[KAmerica/Fort_Nelson[m
+[7mlines 79-113[27m[K[KAmerica/Fort_Wayne[m
+[7mlines 80-114[27m[K[KAmerica/Fortaleza[m
+[7mlines 81-115[27m[K[KAmerica/Glace_Bay[m
+[7mlines 82-116[27m[K[KAmerica/Godthab[m
+[7mlines 83-117[27m[K[KAmerica/Goose_Bay[m
+[7mlines 84-118[27m[K[KAmerica/Grand_Turk[m
+[7mlines 85-119[27m[K[KAmerica/Grenada[m
+[7mlines 86-120[27m[K[KAmerica/Guadeloupe[m
+[7mlines 87-121[27m[K[KAmerica/Guatemala[m
+[7mlines 88-122[27m[K[KAmerica/Guayaquil[m
+[7mlines 89-123[27m[K[KAmerica/Guyana[m
+[7mlines 90-124[27m[K[KAmerica/Halifax[m
+[7mlines 91-125[27m[K[KAmerica/Havana[m
+[7mlines 92-126[27m[K[KAmerica/Hermosillo[m
+[7mlines 93-127[27m[K[KAmerica/Indiana/Indianapolis[m
+[7mlines 94-128[27m[K[KAmerica/Indiana/Knox[m
+[7mlines 95-129[27m[K[KAmerica/Indiana/Marengo[m
+[7mlines 96-130[27m[K[KAmerica/Indiana/Petersburg[m
+[7mlines 97-131[27m[K[KAmerica/Indiana/Tell_City[m
+[7mlines 98-132[27m[K[KAmerica/Indiana/Vevay[m
+[7mlines 99-133[27m[K[KAmerica/Indiana/Vincennes[m
+[7mlines 100-134[27m[K[KAmerica/Indiana/Winamac[m
+[7mlines 101-135[27m[K[KAmerica/Indianapolis[m
+[7mlines 102-136[27m[K[KAmerica/Inuvik[m
+[7mlines 103-137[27m[K[KAmerica/Iqaluit[m
+[7mlines 104-138[27m[K[KAmerica/Jamaica[m
+[7mlines 105-139[27m[K[KAmerica/Jujuy[m
+[7mlines 106-140[27m[K[KAmerica/Juneau[m
+[7mlines 107-141[27m[K[KAmerica/Kentucky/Louisville[m
+[7mlines 108-142[27m[K[KAmerica/Kentucky/Monticello[m
+[7mlines 109-143[27m[K[KAmerica/Knox_IN[m
+[7mlines 110-144[27m[K[KAmerica/Kralendijk[m
+[7mlines 111-145[27m[K[KAmerica/La_Paz[m
+[7mlines 112-146[27m[K[KAmerica/Lima[m
+[7mlines 113-147[27m[K[KAmerica/Los_Angeles[m
+[7mlines 114-148[27m[K[KAmerica/Louisville[m
+[7mlines 115-149[27m[K[KAmerica/Lower_Princes[m
+[7mlines 116-150[27m[K[KAmerica/Maceio[m
+[7mlines 117-151[27m[K[KAmerica/Managua[m
+[7mlines 118-152[27m[K[KAmerica/Manaus[m
+[7mlines 119-153[27m[K[KAmerica/Marigot[m
+[7mlines 120-154[27m[K[KAmerica/Martinique[m
+[7mlines 121-155[27m[K[KAmerica/Matamoros[m
+[7mlines 122-156[27m[K[KAmerica/Mazatlan[m
+[7mlines 123-157[27m[K[KAmerica/Mendoza[m
+[7mlines 124-158[27m[K[KAmerica/Menominee[m
+[7mlines 125-159[27m[K[KAmerica/Merida[m
+[7mlines 126-160[27m[K[KAmerica/Metlakatla[m
+[7mlines 127-161[27m[K[KAmerica/Mexico_City[m
+[7mlines 128-162[27m[K[KAmerica/Miquelon[m
+[7mlines 129-163[27m[K[KAmerica/Moncton[m
+[7mlines 130-164[27m[K[KAmerica/Monterrey[m
+[7mlines 131-165[27m[K[KAmerica/Montevideo[m
+[7mlines 132-166[27m[K[KAmerica/Montreal[m
+[7mlines 133-167[27m[K[KAmerica/Montserrat[m
+[7mlines 134-168[27m[K[KAmerica/Nassau[m
+[7mlines 135-169[27m[K[KAmerica/New_York[m
+[7mlines 136-170[27m[K[KAmerica/Nipigon[m
+[7mlines 137-171[27m[K[KAmerica/Nome[m
+[7mlines 138-172[27m[K[KAmerica/Noronha[m
+[7mlines 139-173[27m[K[KAmerica/North_Dakota/Beulah[m
+[7mlines 140-174[27m[K[KAmerica/North_Dakota/Center[m
+[7mlines 141-175[27m[K[KAmerica/North_Dakota/New_Salem[m
+[7mlines 142-176[27m[K[KAmerica/Nuuk[m
+[7mlines 143-177[27m[K[KAmerica/Ojinaga[m
+[7mlines 144-178[27m[K[KAmerica/Panama[m
+[7mlines 145-179[27m[K[KAmerica/Pangnirtung[m
+[7mlines 146-180[27m[K[KAmerica/Paramaribo[m
+[7mlines 147-181[27m[K[KAmerica/Phoenix[m
+[7mlines 148-182[27m[K[KAmerica/Port-au-Prince[m
+[7mlines 149-183[27m[K[KAmerica/Port_of_Spain[m
+[7mlines 150-184[27m[K[KAmerica/Porto_Acre[m
+[7mlines 151-185[27m[K[KAmerica/Porto_Velho[m
+[7mlines 152-186[27m[K[KAmerica/Puerto_Rico[m
+[7mlines 153-187[27m[K[KAmerica/Punta_Arenas[m
+[7mlines 154-188[27m[K[KAmerica/Rainy_River[m
+[7mlines 155-189[27m[K[KAmerica/Rankin_Inlet[m
+[7mlines 156-190[27m[K[KAmerica/Recife[m
+[7mlines 157-191[27m[K[KAmerica/Regina[m
+[7mlines 158-192[27m[K[KAmerica/Resolute[m
+[7mlines 159-193[27m[K[KAmerica/Rio_Branco[m
+[7mlines 160-194[27m[K[KAmerica/Rosario[m
+[7mlines 161-195[27m[K[KAmerica/Santa_Isabel[m
+[7mlines 162-196[27m[K[KAmerica/Santarem[m
+[7mlines 163-197[27m[K[KAmerica/Santiago[m
+[7mlines 164-198[27m[K[KAmerica/Santo_Domingo[m
+[7mlines 165-199[27m[K[KAmerica/Sao_Paulo[m
+[7mlines 166-200[27m[K[KAmerica/Scoresbysund[m
+[7mlines 167-201[27m[K[KAmerica/Shiprock[m
+[7mlines 168-202[27m[K[KAmerica/Sitka[m
+[7mlines 169-203[27m[K[KAmerica/St_Barthelemy[m
+[7mlines 170-204[27m[K[KAmerica/St_Johns[m
+[7mlines 171-205[27m[K[KAmerica/St_Kitts[m
+[7mlines 172-206[27m[K[KAmerica/St_Lucia[m
+[7mlines 173-207[27m[K[KAmerica/St_Thomas[m
+[7mlines 174-208[27m[K[KAmerica/St_Vincent[m
+[7mlines 175-209[27m[K[KAmerica/Swift_Current[m
+[7mlines 176-210[27m[K[KAmerica/Tegucigalpa[m
+[7mlines 177-211[27m[K[KAmerica/Thule[m
+[7mlines 178-212[27m[K[KAmerica/Thunder_Bay[m
+[7mlines 179-213[27m[K[KAmerica/Tijuana[m
+[7mlines 180-214[27m[K[KAmerica/Toronto[m
+[7mlines 181-215[27m[K[KAmerica/Tortola[m
+[7mlines 182-216[27m[K[KAmerica/Vancouver[m
+[7mlines 183-217[27m[K[KAmerica/Virgin[m
+[7mlines 184-218[27m[K[KAmerica/Whitehorse[m
+[7mlines 185-219[27m[K[KAmerica/Winnipeg[m
+[7mlines 186-220[27m[K[KAmerica/Yakutat[m
+[7mlines 187-221[27m[K[KAmerica/Yellowknife[m
+[7mlines 188-222[27m[K[KAntarctica/Casey[m
+[7mlines 189-223[27m[K[KAntarctica/Davis[m
+[7mlines 190-224[27m[K[KAntarctica/DumontDUrville[m
+[7mlines 191-225[27m[K[KAntarctica/Macquarie[m
+[7mlines 192-226[27m[K[KAntarctica/Mawson[m
+[7mlines 193-227[27m[K[KAntarctica/McMurdo[m
+[7mlines 194-228[27m[K[KAntarctica/Palmer[m
+[7mlines 195-229[27m[K[KAntarctica/Rothera[m
+[7mlines 196-230[27m[K[KAntarctica/South_Pole[m
+[7mlines 197-231[27m[K[KAntarctica/Syowa[m
+[7mlines 198-232[27m[K[KAntarctica/Troll[m
+[7mlines 199-233[27m[K[KAntarctica/Vostok[m
+[7mlines 200-234[27m[K[KArctic/Longyearbyen[m
+[7mlines 201-235[27m[K[KAsia/Aden[m
+[7mlines 202-236[27m[K[KAsia/Almaty[m
+[7mlines 203-237[27m[K[KAsia/Amman[m
+[7mlines 204-238[27m[K[KAsia/Anadyr[m
+[7mlines 205-239[27m[K[KAsia/Aqtau[m
+[7mlines 206-240[27m[K[KAsia/Aqtobe[m
+[7mlines 207-241[27m[K[KAsia/Ashgabat[m
+[7mlines 208-242[27m[K[KAsia/Ashkhabad[m
+[7mlines 209-243[27m[K[KAsia/Atyrau[m
+[7mlines 210-244[27m[K[KAsia/Baghdad[m
+[7mlines 211-245[27m[K[KAsia/Bahrain[m
+[7mlines 212-246[27m[K[KAsia/Baku[m
+[7mlines 213-247[27m[K[KAsia/Bangkok[m
+[7mlines 214-248[27m[K[KAsia/Barnaul[m
+[7mlines 215-249[27m[K[KAsia/Beirut[m
+[7mlines 216-250[27m[K[KAsia/Bishkek[m
+[7mlines 217-251[27m[K[KAsia/Brunei[m
+[7mlines 218-252[27m[K[KAsia/Calcutta[m
+[7mlines 219-253[27m[K[KAsia/Chita[m
+[7mlines 220-254[27m[K[KAsia/Choibalsan[m
+[7mlines 221-255[27m[K[KAsia/Chongqing[m
+[7mlines 222-256[27m[K[KAsia/Chungking[m
+[7mlines 223-257[27m[K[KAsia/Colombo[m
+[7mlines 224-258[27m[K[KAsia/Dacca[m
+[7mlines 225-259[27m[K[KAsia/Damascus[m
+[7mlines 226-260[27m[K[KAsia/Dhaka[m
+[7mlines 227-261[27m[K[KAsia/Dili[m
+[7mlines 228-262[27m[K[KAsia/Dubai[m
+[7mlines 229-263[27m[K[KAsia/Dushanbe[m
+[7mlines 230-264[27m[K[KAsia/Famagusta[m
+[7mlines 231-265[27m[K[KAsia/Gaza[m
+[7mlines 232-266[27m[K[KAsia/Harbin[m
+[7mlines 233-267[27m[K[KAsia/Hebron[m
+[7mlines 234-268[27m[K[KAsia/Ho_Chi_Minh[m
+[7mlines 235-269[27m[K[KAsia/Hong_Kong[m
+[7mlines 236-270[27m[K[KAsia/Hovd[m
+[7mlines 237-271[27m[K[KAsia/Irkutsk[m
+[7mlines 238-272[27m[K[KAsia/Istanbul[m
+[7mlines 239-273[27m[K[KAsia/Jakarta[m
+[7mlines 240-274[27m[K[KAsia/Jayapura[m
+[7mlines 241-275[27m[K[KAsia/Jerusalem[m
+[7mlines 242-276[27m[K[KAsia/Kabul[m
+[7mlines 243-277[27m[K[KAsia/Kamchatka[m
+[7mlines 244-278[27m[K[KAsia/Karachi[m
+[7mlines 245-279[27m[K[KAsia/Kashgar[m
+[7mlines 246-280[27m[K[KAsia/Kathmandu[m
+[7mlines 247-281[27m[K[KAsia/Katmandu[m
+[7mlines 248-282[27m[K[KAsia/Khandyga[m
+[7mlines 249-283[27m[K[KAsia/Kolkata[m
+[7mlines 250-284[27m[K[KAsia/Krasnoyarsk[m
+[7mlines 251-285[27m[K[KAsia/Kuala_Lumpur[m
+[7mlines 252-286[27m[K[KAsia/Kuching[m
+[7mlines 253-287[27m[K[KAsia/Kuwait[m
+[7mlines 254-288[27m[K[KAsia/Macao[m
+[7mlines 255-289[27m[K[KAsia/Macau[m
+[7mlines 256-290[27m[K[KAsia/Magadan[m
+[7mlines 257-291[27m[K[KAsia/Makassar[m
+[7mlines 258-292[27m[K[KAsia/Manila[m
+[7mlines 259-293[27m[K[KAsia/Muscat[m
+[7mlines 260-294[27m[K[KAsia/Nicosia[m
+[7mlines 261-295[27m[K[KAsia/Novokuznetsk[m
+[7mlines 262-296[27m[K[KAsia/Novosibirsk[m
+[7mlines 263-297[27m[K[KAsia/Omsk[m
+[7mlines 264-298[27m[K[KAsia/Oral[m
+[7mlines 265-299[27m[K[KAsia/Phnom_Penh[m
+[7mlines 266-300[27m[K[KAsia/Pontianak[m
+[7mlines 267-301[27m[K[KAsia/Pyongyang[m
+[7mlines 268-302[27m[K[KAsia/Qatar[m
+[7mlines 269-303[27m[K[KAsia/Qostanay[m
+[7mlines 270-304[27m[K[KAsia/Qyzylorda[m
+[7mlines 271-305[27m[K[KAsia/Rangoon[m
+[7mlines 272-306[27m[K[KAsia/Riyadh[m
+[7mlines 273-307[27m[K[KAsia/Saigon[m
+[7mlines 274-308[27m[K[KAsia/Sakhalin[m
+[7mlines 275-309[27m[K[KAsia/Samarkand[m
+[7mlines 276-310[27m[K[KAsia/Seoul[m
+[7mlines 277-311[27m[K[KAsia/Shanghai[m
+[7mlines 278-312[27m[K[KAsia/Singapore[m
+[7mlines 279-313[27m[K[KAsia/Srednekolymsk[m
+[7mlines 280-314[27m[K[KAsia/Taipei[m
+[7mlines 281-315[27m[K[KAsia/Tashkent[m
+[7mlines 282-316[27m[K[KAsia/Tbilisi[m
+[7mlines 283-317[27m[K[KAsia/Tehran[m
+[7mlines 284-318[27m[K[KAsia/Tel_Aviv[m
+[7mlines 285-319[27m[K[KAsia/Thimbu[m
+[7mlines 286-320[27m[K[KAsia/Thimphu[m
+[7mlines 287-321[27m[K[KAsia/Tokyo[m
+[7mlines 288-322[27m[K[KAsia/Tomsk[m
+[7mlines 289-323[27m[K[KAsia/Ujung_Pandang[m
+[7mlines 290-324[27m[K[KAsia/Ulaanbaatar[m
+[7mlines 291-325[27m[K[KAsia/Ulan_Bator[m
+[7mlines 292-326[27m[K[KAsia/Urumqi[m
+[7mlines 293-327[27m[K[KAsia/Ust-Nera[m
+[7mlines 294-328[27m[K[KAsia/Vientiane[m
+[7mlines 295-329[27m[K[KAsia/Vladivostok[m
+[7mlines 296-330[27m[K[KAsia/Yakutsk[m
+[7mlines 297-331[27m[K[KAsia/Yangon[m
+[7mlines 298-332[27m[K[KAsia/Yekaterinburg[m
+[7mlines 299-333[27m[K[KAsia/Yerevan[m
+[7mlines 300-334[27m[K[KAtlantic/Azores[m
+[7mlines 301-335[27m[K[KAtlantic/Bermuda[m
+[7mlines 302-336[27m[K[KAtlantic/Canary[m
+[7mlines 303-337[27m[K[KAtlantic/Cape_Verde[m
+[7mlines 304-338[27m[K[KAtlantic/Faeroe[m
+[7mlines 305-339[27m[K[KAtlantic/Faroe[m
+[7mlines 306-340[27m[K[KAtlantic/Jan_Mayen[m
+[7mlines 307-341[27m[K[KAtlantic/Madeira[m
+[7mlines 308-342[27m[K[KAtlantic/Reykjavik[m
+[7mlines 309-343[27m[K[KAtlantic/South_Georgia[m
+[7mlines 310-344[27m[K[KAtlantic/St_Helena[m
+[7mlines 311-345[27m[K[KAtlantic/Stanley[m
+[7mlines 312-346[27m[K[KAustralia/ACT[m
+[7mlines 313-347[27m[K[KAustralia/Adelaide[m
+[7mlines 314-348[27m[K[KAustralia/Brisbane[m
+[7mlines 315-349[27m[K[KAustralia/Broken_Hill[m
+[7mlines 316-350[27m[K[KAustralia/Canberra[m
+[7mlines 317-351[27m[K[KAustralia/Currie[m
+[7mlines 318-352[27m[K[K[?1l>[?2004h]0;box@myserver: ~[01;32mbox@myserver[00m:[01;34m~[00m$ [7msudo timedatectl set-timezone Asia/Yekaterinburg[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csudo timedatectl set-timezone Asia/Yekaterinburg
+[?2004l[sudo] password for box: 
+[?2004h]0;box@myserver: ~[01;32mbox@myserver[00m:[01;34m~[00m$ [7mdate[27m
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdate
+[A
+[?2004lThu Jul 18 04:06:49 PM +05 2024
+[?2004h]0;box@myserver: ~[01;32mbox@myserver[00m:[01;34m~[00m$ exit
+[?2004lexit
+
+Script done on 2024-07-18 11:07:02+00:00 [COMMAND_EXIT_CODE="0"]
