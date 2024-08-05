@@ -1,0 +1,5 @@
+sudo iptables -A FORWARD -i lxdbr0 -o wlp0s20f3 -j ACCEPT
+sudo iptables -A FORWARD -i wlp0s20f3 -o lxdbr0 -j ACCEPT
+sudo iptables -A FORWARD -i lxdbr0 -o lxdbr0 -j ACCEPT
+
+иначе контейнер не мог выйти в интернет. 
