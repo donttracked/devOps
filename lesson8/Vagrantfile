@@ -1,0 +1,21 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+Vagrant.configure("2") do |config|
+  config.vm.define "server" do |server|
+    server.vm.box = "bento/ubuntu-20.04"
+    server.vm.hostname = "server"
+    server.vm.network "private_network", ip: "192.168.56.102"
+    server.vm.synced_folder "./src", "/home/vagrant/shared_folder"
+    server.vm.provision "shell", path: "./server_provision.sh"
+
+  end
+
+  config.vm.define "client" do |client|
+      client.vm.box = "bento/ubuntu-20.04"
+      client.vm.hostname = "client"
+      client.vm.network "private_network", ip: "192.168.56.101"
+      client.vm.synced_folder "./src", "/home/vagrant/shared_folder"
+      client.vm.provision "shell", path: "./client_provision.sh"
+    end
+
+end
