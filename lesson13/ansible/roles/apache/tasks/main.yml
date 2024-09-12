@@ -1,0 +1,34 @@
+---
+- name: Install Apache packages (Ubuntu)
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  loop:
+    - apache2
+    - libapache2-mod-php
+    - php
+    - php-mysql
+  when: ansible_os_family == 'Debian'
+
+- name: Install Apache packages (CentOS)
+  yum:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - httpd
+    - php
+    - php-mysqlnd
+  when: ansible_os_family == 'RedHat'
+
+- name: Start and enable Apache service
+  service:
+    name: "{{ apache_service }}"
+    state: started
+    enabled: yes
+
+- name: Create Apache virtual host for WordPress
+  template:
+    src: wordpress.conf.j2
+    dest: "{{ apache_conf_file }}"
+  notify: Restart Apache

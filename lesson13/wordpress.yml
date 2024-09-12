@@ -1,0 +1,7 @@
+---
+- name: Setup WordPress Environment
+  hosts: all
+  become: true
+  roles:
+    - role: ansible/roles/mysql
+    - role: ansible/roles/apache

@@ -1,0 +1,9 @@
+---
+# defaults file for roles/apache
+apache_conf_dir: "{{ '/etc/apache2/sites-available/' if ansible_os_family == 'Debian' else '/etc/httpd/conf.d/' }}"
+apache_conf_file: "{{ apache_conf_dir }}wordpress.conf"
+apache_service: "{{ 'apache2' if ansible_os_family == 'Debian' else 'httpd' }}"
+
+document_root: /var/www/html
+error_log_path: "{{ '/var/log/apache2/error.log' if ansible_os_family == 'Debian' else '/var/log/httpd/error_log' }}"
+custom_log_path: "{{ '/var/log/apache2/access.log' if ansible_os_family == 'Debian' else '/var/log/httpd/access_log' }}"

@@ -1,0 +1,40 @@
+---
+- name: Install MySQL packages (Ubuntu)
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  loop:
+    - mysql-server
+    - python3-mysqldb
+  when: ansible_os_family == 'Debian'
+
+- name: Install MySQL packages (CentOS)
+  yum:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - python3
+    - mysql-server
+    - python3-mysqlclient
+  when: ansible_os_family == 'RedHat'
+
+- name: Start and enable MySQL service
+  service:
+    name: "{{ mysql_service }}"
+    state: started
+    enabled: yes
+  vars:
+    mysql_service: "{{ 'mysql' if ansible_os_family == 'Debian' else 'mysqld' }}"
+
+- name: Create a database for WordPress
+  mysql_db:
+    name: wordpress
+    state: present
+
+- name: Create a MySQL user for WordPress
+  mysql_user:
+    name: "{{ mysql_wordpress_user }}"
+    password: "{{ mysql_wordpress_password }}"
+    priv: 'wordpress.*:ALL'
+    state: present

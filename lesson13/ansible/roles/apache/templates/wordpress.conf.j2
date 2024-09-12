@@ -1,0 +1,11 @@
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    DocumentRoot {{ document_root }}
+
+    <Directory {{ document_root }}>
+        AllowOverride All
+    </Directory>
+
+    ErrorLog {{ error_log_path }}
+    CustomLog {{ custom_log_path }} combined
+</VirtualHost>
