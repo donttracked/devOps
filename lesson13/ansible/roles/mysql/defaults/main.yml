@@ -1,0 +1,4 @@
+---
+mysql_root_password: "default_root_password"
+mysql_wordpress_user: "wordpress_user"
+mysql_wordpress_password: "default_secure_password"
