@@ -1,0 +1,23 @@
+docker network create wp-net
+
+docker run -d \
+  --name wp-db \
+  --network wp-net \
+  -v wp-db:/var/lib/mysql \
+  -e MYSQL_ROOT_PASSWORD=rootpassword \
+  -e MYSQL_DATABASE=wordpress \
+  -e MYSQL_USER=wpuser \
+  -e MYSQL_PASSWORD=wppassword \
+  mysql:5.7
+
+docker run -d \
+  --name wp-app \
+  --network wp-net \
+  -v wp-data:/var/www/html \
+  -v $(pwd)/000-default.conf:/etc/apache2/sites-enabled/000-default.conf \
+  -e WORDPRESS_DB_HOST=wp-db:3306 \
+  -e WORDPRESS_DB_USER=wpuser \
+  -e WORDPRESS_DB_PASSWORD=wppassword \
+  -e WORDPRESS_DB_NAME=wordpress \
+  -p 8083:80 \
+  wordpress:latest

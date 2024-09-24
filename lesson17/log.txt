@@ -1,0 +1,74 @@
+Script started on 2024-09-23 01:06:02+05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="177" LINES="13"]
+[?2004h]0;user@user-PK: ~/Документы/repo/lesson17[01;32muser@user-PK[00m:[01;34m~/Документы/repo/lesson17[00m$ docker network create wp-net
+[?2004la7893a9f5ecf403a78c1142cb0bedfd5e8461a707ef10bf5abfd5d6ffe380746
+[?2004h]0;user@user-PK: ~/Документы/repo/lesson17[01;32muser@user-PK[00m:[01;34m~/Документы/repo/lesson17[00m$ docker run -d \
+[?2004l[?2004h>   --name wp-db \
+[?2004l[?2004h>   --network wp-net \
+[?2004l[?2004h>   -v wp-db:/var/lib/mysql \
+[?2004l[?2004h>   -e MYSQL_ROOT_PASSWORD=rootpassword \
+[?2004l[?2004h>   -e MYSQL_DATABASE=wordpress \
+[?2004l[?2004h>   -e MYSQL_USER=wpuser \
+[?2004l[?2004h>   -e MYSQL_PASSWORD=wppassword \
+[?2004l[?2004h>   mysql:5.7
+[?2004l84b641f1803340ba2ce21aae347986fd529150f7e385c5fa33ec4c1c3f7e1938
+[?2004h]0;user@user-PK: ~/Документы/repo/lesson17[01;32muser@user-PK[00m:[01;34m~/Документы/repo/lesson17[00m$ docker run -d \
+[?2004l[?2004h>   --name wp-app \
+[?2004l[?2004h>   --network wp-net \
+[?2004l[?2004h>   -v wp-data:/var/www/html \
+[?2004l[?2004h>   -v $(pwd)/000-default.conf:/etc/apache2/sites-enabled/000-default.conf \
+[?2004l[?2004h>   -e WORDPRESS_DB_HOST=wp-db:3306 \
+[?2004l[?2004h>   -e WORDPRESS_DB_USER=wpuser \
+[?2004l[?2004h>   -e WORDPRESS_DB_PASSWORD=wppassword \
+[?2004l[?2004h>   -e WORDPRESS_DB_NAME=wordpress \
+[?2004l[?2004h>   -p 8083:80 \
+[?2004l[?2004h>   wordpress:latest
+[?2004l0283a3fbaf3a06691a2b419f7ba53fb4efb2d0fc70cd80dc291bc78ca9547a27
+[?2004h]0;user@user-PK: ~/Документы/repo/lesson17[01;32muser@user-PK[00m:[01;34m~/Документы/repo/lesson17[00m$ docker ps
+[?2004lCONTAINER ID   IMAGE              COMMAND                  CREATED          STATUS          PORTS                                     NAMES
+0283a3fbaf3a   wordpress:latest   "docker-entrypoint.s…"   3 seconds ago    Up 2 seconds    0.0.0.0:8083->80/tcp, [::]:8083->80/tcp   wp-app
+84b641f18033   mysql:5.7          "docker-entrypoint.s…"   38 seconds ago   Up 38 seconds   3306/tcp, 33060/tcp                       wp-db
+[?2004h]0;user@user-PK: ~/Документы/repo/lesson17[01;32muser@user-PK[00m:[01;34m~/Документы/repo/lesson17[00m$ docker logs 0283a3fbaf3a
+[?2004lAH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.3. Set the 'ServerName' directive globally to suppress this message
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.3. Set the 'ServerName' directive globally to suppress this message
+[Sun Sep 22 20:07:07.102499 2024] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.62 (Debian) PHP/8.2.23 configured -- resuming normal operations
+[Sun Sep 22 20:07:07.102541 2024] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+lastbyte.loc:80 172.19.0.1 - - [22/Sep/2024:20:07:11 +0000] "GET / HTTP/1.1" 302 405 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+lastbyte.loc:80 172.19.0.1 - - [22/Sep/2024:20:07:12 +0000] "GET /wp-admin/install.php HTTP/1.1" 200 4654 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+lastbyte.loc:80 172.19.0.1 - - [22/Sep/2024:20:07:14 +0000] "GET /wp-admin/css/l10n.min.css?ver=6.6.2 HTTP/1.1" 200 1103 "http://localhost:8083/wp-admin/install.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+lastbyte.loc:80 172.19.0.1 - - [22/Sep/2024:20:07:14 +0000] "GET /wp-includes/css/buttons.min.css?ver=6.6.2 HTTP/1.1" 200 1808 "http://localhost:8083/wp-admin/install.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+lastbyte.loc:80 172.19.0.1 - - [22/Sep/2024:20:07:14 +0000] "GET /wp-includes/css/dashicons.min.css?ver=6.6.2 HTTP/1.1" 200 36068 "http://localhost:8083/wp-admin/install.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+lastbyte.loc:80 172.19.0.1 - - [22/Sep/2024:20:07:14 +0000] "GET /wp-admin/css/install.min.css?ver=6.6.2 HTTP/1.1" 200 2134 "http://localhost:8083/wp-admin/install.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+lastbyte.loc:80 172.19.0.1 - - [22/Sep/2024:20:07:14 +0000] "GET /wp-admin/css/forms.min.css?ver=6.6.2 HTTP/1.1" 200 7062 "http://localhost:8083/wp-admin/install.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+lastbyte.loc:80 172.19.0.1 - - [22/Sep/2024:20:07:14 +0000] "GET /wp-includes/js/jquery/jquery.min.js?ver=3.7.1 HTTP/1.1" 200 30715 "http://localhost:8083/wp-admin/install.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+lastbyte.loc:80 172.19.0.1 - - [22/Sep/2024:20:07:14 +0000] "GET /wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1 HTTP/1.1" 200 5216 "http://localhost:8083/wp-admin/install.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+lastbyte.loc:80 172.19.0.1 - - [22/Sep/2024:20:07:14 +0000] "GET /wp-admin/js/language-chooser.min.js?ver=6.6.2 HTTP/1.1" 200 615 "http://localhost:8083/wp-admin/install.php" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+lastbyte.loc:80 172.19.0.1 - - [22/Sep/2024:20:07:14 +0000] "GET /wp-admin/images/spinner-2x.gif HTTP/1.1" 200 7822 "http://localhost:8083/wp-admin/css/install.min.css?ver=6.6.2" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+lastbyte.loc:80 172.19.0.1 - - [22/Sep/2024:20:07:14 +0000] "GET /wp-admin/images/wordpress-logo.svg?ver=20131107 HTTP/1.1" 200 1810 "http://localhost:8083/wp-admin/css/install.min.css?ver=6.6.2" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+lastbyte.loc:80 127.0.0.1 - - [22/Sep/2024:20:07:21 +0000] "OPTIONS * HTTP/1.0" 200 126 "-" "Apache/2.4.62 (Debian) PHP/8.2.23 (internal dummy connection)"
+lastbyte.loc:80 127.0.0.1 - - [22/Sep/2024:20:07:22 +0000] "OPTIONS * HTTP/1.0" 200 126 "-" "Apache/2.4.62 (Debian) PHP/8.2.23 (internal dummy connection)"
+lastbyte.loc:80 127.0.0.1 - - [22/Sep/2024:20:07:23 +0000] "OPTIONS * HTTP/1.0" 200 126 "-" "Apache/2.4.62 (Debian) PHP/8.2.23 (internal dummy connection)"
+[?2004h]0;user@user-PK: ~/Документы/repo/lesson17[01;32muser@user-PK[00m:[01;34m~/Документы/repo/lesson17[00m$ docker logs 0283a3fbaf3aps[K
+[?2004lCONTAINER ID   IMAGE              COMMAND                  CREATED              STATUS              PORTS                                     NAMES
+0283a3fbaf3a   wordpress:latest   "docker-entrypoint.s…"   33 seconds ago       Up 33 seconds       0.0.0.0:8083->80/tcp, [::]:8083->80/tcp   wp-app
+84b641f18033   mysql:5.7          "docker-entrypoint.s…"   About a minute ago   Up About a minute   3306/tcp, 33060/tcp                       wp-db
+[?2004h]0;user@user-PK: ~/Документы/repo/lesson17[01;32muser@user-PK[00m:[01;34m~/Документы/repo/lesson17[00m$ docker -e[K[Kexec -it 0283a3fbaf3a bash
+[?2004l[?2004hroot@0283a3fbaf3a:/var/www/html# ca  t /etc/s apache2/sites-enabled/000-default.conf 
+[?2004l<VirtualHost *:80>
+ServerAdmin admin@lastbyte.loc
+ServerName lastbyte.loc
+ServerAlias www.lastbyte.loc
+DocumentRoot /var/www/html/
+<Directory /var/www/html/>
+	Options Indexes FollowSymLinks MultiViews
+	AllowOverride All
+	Order allow,deny
+	Allow from all
+	Require all granted
+</Directory>
+</VirtualHost>
+[?2004hroot@0283a3fbaf3a:/var/www/html# exit
+[?2004lexit
+[?2004h]0;user@user-PK: ~/Документы/repo/lesson17[01;32muser@user-PK[00m:[01;34m~/Документы/repo/lesson17[00m$ exit
+[?2004lexit
+
+Script done on 2024-09-23 01:08:08+05:00 [COMMAND_EXIT_CODE="0"]
