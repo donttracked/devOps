@@ -1,12 +1,9 @@
-variable "subnets" {
-  type = list(object({
-    id   = string
-    zone = string
-  }))
-  description = "Список подсетей с их зонами."
+variable "subnet_id" {
+  type        = string
+  description = "ID подсети, в которой будет создана ВМ."
 }
 
-variable "zone" {
+variable "vm_zone" {
   type        = string
   description = "Зона, в которой будет создана ВМ."
 }
@@ -23,7 +20,7 @@ variable "image_id" {
 
 variable "platform_id" {
   type        = string
-  description = "ID платформы для ВМ (например, 'standard-v1')."
+  description = "ID платформы для ВМ."
 }
 
 variable "resources" {

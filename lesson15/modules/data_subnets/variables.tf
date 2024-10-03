@@ -1,7 +1,9 @@
-variable "subnets" {
-  type = list(object({
-    id   = string
-    zone = string
-  }))
-  description = "Список подсетей с их зонами."
+variable "vpc_network" {
+  type        = string
+  description = "Имя выбранной VPC-сети."
+}
+
+variable "network_zones" {
+  type        = list(string)
+  description = "Список зон, для которых необходимо получить подсети."
 }

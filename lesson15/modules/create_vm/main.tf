@@ -1,14 +1,7 @@
-locals {
-  subnets_in_zone = [
-  for subnet in var.subnets : subnet
-  if subnet.zone == var.zone
-  ]
-}
-
 resource "yandex_compute_instance" "vm_instance" {
   name        = var.vm_name
   platform_id = var.platform_id
-  zone        = var.zone
+  zone        = var.vm_zone
 
   resources {
     cores         = var.resources.cores
@@ -23,6 +16,8 @@ resource "yandex_compute_instance" "vm_instance" {
   }
 
   network_interface {
-    subnet_id = local.subnets_in_zone[0].id
+    subnet_id = var.subnet_id
+
+    nat = true
   }
 }

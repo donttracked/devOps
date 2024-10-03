@@ -1,3 +1,4 @@
+# Переменные для провайдера
 variable "yc_token" {
   type        = string
   description = "OAuth-токен или IAM-токен для доступа к Яндекс Облаку."
@@ -20,9 +21,14 @@ variable "yc_zone" {
 }
 
 # Переменные для модулей
-variable "vpc_id" {
+variable "vpc_network" {
   type        = string
-  description = "ID выбранной VPC."
+  description = "Имя выбранной VPC-сети."
+}
+
+variable "network_zones" {
+  type        = list(string)
+  description = "Список зон, для которых необходимо получить подсети."
 }
 
 variable "vm_zone" {

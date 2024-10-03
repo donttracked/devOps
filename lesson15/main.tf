@@ -1,29 +1,17 @@
-# Определение локальной переменной с подсетями
-locals {
-  subnets = [
-    {
-      id   = "e9bov5qhaosdubvl3t4v"
-      zone = "ru-central1-a"
-    },
-    {
-      id   = "e2lr98850d58m2luhivh"
-      zone = "ru-central1-b"
-    },
-    # Добавьте другие подсети по необходимости
-  ]
-}
-
+# Вызов модуля data_subnets для получения subnet_id на основе zone
 module "data_subnets" {
   source = "./modules/data_subnets"
 
-  subnets = local.subnets
+  vpc_network   = var.vpc_network
+  network_zones = var.network_zones
 }
 
+# Вызов модуля create_vm с передачей соответствующего subnet_id
 module "create_vm" {
   source = "./modules/create_vm"
 
-  subnets     = local.subnets
-  zone        = var.vm_zone
+  subnet_id   = module.data_subnets.subnets[var.vm_zone].id
+  vm_zone     = var.vm_zone
   vm_name     = var.vm_name
   image_id    = var.image_id
   platform_id = var.platform_id
