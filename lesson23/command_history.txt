@@ -1,0 +1,17 @@
+kubectl apply -f kind-config.yaml
+kubectl apply -f namespace.yaml
+kubectl apply -f storage-class.yaml
+kubectl apply -f pv-mysql.yaml
+kubectl apply -f pv-wordpress.yaml
+kubectl apply -f mysql-service.yaml
+kubectl apply -f mysql-statefulset.yaml
+kubectl apply -f wordpress-pvc.yaml
+kubectl apply -f wordpress-deployment.yaml
+kubectl apply -f wordpress-service.yaml
+kubectl apply -f wordpress-hpa.yaml
+kubectl apply -f mysql-networkpolicy.yaml
+kubectl apply -f diagnostic-serviceaccount.yaml
+kubectl apply -f diagnostic-role.yaml
+kubectl apply -f diagnostic-rolebinding.yaml
+kubectl apply -f diagnostic-pod.yaml
+kubectl logs diagnostic-pod -n dev -f
