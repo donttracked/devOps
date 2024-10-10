@@ -1,0 +1,12 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+  - role: control-plane
+  - role: worker
+    extraMounts:
+      - hostPath: /mnt/disks/mysql
+        containerPath: /mnt/disks/mysql
+  - role: worker
+    extraMounts:
+      - hostPath: /mnt/disks/wordpress
+        containerPath: /mnt/disks/wordpress
