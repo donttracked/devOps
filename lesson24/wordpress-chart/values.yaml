@@ -1,0 +1,48 @@
+mysql:
+  rootPassword: password
+  storageSize: 1Gi
+
+wordpress:
+  dbPassword: password
+  replicas: 1
+  storageSize: 1Gi
+
+ingress:
+  enabled: true
+  host: wordpress.local
+
+resources:
+  requests:
+    memory: "256Mi"
+    cpu: "100m"
+  limits:
+    memory: "512Mi"
+    cpu: "500m"
+
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 50
+
+image:
+  repository: wordpress
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+service:
+  port: 80
+
+# Если необходимо использовать ImagePullSecrets для приватных репозиториев
+imagePullSecrets: []
+
+# Настройки для Pod Security Context и контейнера (можно настроить при необходимости)
+podSecurityContext: {}
+securityContext: {}
+
+# Дополнительные настройки для монтирования Volume, NodeSelector, Affinity и Tolerations (можно настроить по мере необходимости)
+volumeMounts: []
+volumes: []
+nodeSelector: {}
+affinity: {}
+tolerations: []
