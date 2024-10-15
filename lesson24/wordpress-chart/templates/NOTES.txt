@@ -1,0 +1,5 @@
+Your WordPress installation is complete!
+
+To access the application, run:
+
+  kubectl get svc --namespace {{ .Release.Namespace }} -w
