@@ -1,3 +1,9 @@
 .idea
 .vagrant
 src
+!lesson26/Hello-Devops/src
+!lesson26/Hello-Devops/src/**
+!lesson26/Hello-Jenkins/src
+!lesson26/Hello-Jenkins/src/**
+!lesson26/Hello-World/src
+!lesson26/Hello-World/src/**

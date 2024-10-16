@@ -1,0 +1,32 @@
+pipeline {
+    agent {
+        label 'maven-agent' // Указываем ваш агент
+    }
+    environment {
+        APP_JN = "lesson26/Hello-Jenkins"
+    }
+    stages {
+        stage('Build') {
+            steps {
+                dir(env.APP_JN) {
+                sh 'mvn -B -DskipTests clean package'
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+        stage('Deliver') {
+            steps {
+                echo "ok"
+            }
+        }
+    }
+}

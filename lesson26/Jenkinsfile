@@ -1,0 +1,122 @@
+pipeline {
+    agent {
+        label 'maven-agent' // Указываем ваш агент
+    }
+
+    environment {
+        GITHUB_URL = "https://github.com/donttracked/devOps.git"
+        GIT_USER = "GitHub"
+        BRANCH = "lesson26"
+        APP_DEVOPS = "lesson26/Hello-Devops"
+        APP_JENS = "lesson26/Hello-Jenkins"
+        APP_WORLD = "lesson26/Hello-World"
+    }
+
+    stages {
+        stage('Check out') {
+            steps {
+                git branch: env.BRANCH,
+                changelog: false,
+                credentialsId: env.GIT_USER,
+                poll: false,
+                url: env.GITHUB_URL
+            }
+        }
+        stage('start') {
+            parallel {
+                stage('DEVOPS') {
+                    when { changeset "${env.APP_DEVOPS}/**/*.java" }
+                    stages {
+                        stage ('Build') {
+                            steps {
+                                dir(env.APP_DEVOPS) {
+                                    sh 'mvn -B -DskipTests clean package'
+                                }
+                            }
+                        }
+                        stage ('Test') {
+                            steps {
+                                dir(env.APP_DEVOPS) {
+                                    sh 'mvn test'
+                                }
+                            }
+                            post {
+                                always {
+                                    junit '**/target/surefire-reports/*.xml'
+                                }
+                            }
+                        }
+                        stage ('Deliver') {
+                            steps {
+                                echo "SUCCES"
+                                //sh './jenkins/scripts/deliver.sh'
+                            }
+                        }
+                    }
+                }
+                stage('JENKINS') {
+                    when { changeset "${env.APP_JENS}/**/*.java" }
+                    stages {
+                        stage ('Build') {
+                            steps {
+                                dir(env.APP_JENS) {
+                                    sh 'mvn -B -DskipTests clean package'
+                                }
+                            }
+                        }
+                        stage ('Test') {
+                            steps {
+                                dir(env.APP_JENS) {
+                                    sh 'mvn test'
+                                }
+                            }
+                            post {
+                                always {
+                                    junit '**/target/surefire-reports/*.xml'
+                                    archiveArtifacts '**/target/*.jar'
+                                }
+                            }
+                        }
+                        stage ('Deliver') {
+                            steps {
+                                echo "SUCCES"
+                                //sh './jenkins/scripts/deliver.sh'
+                            }
+                        }
+                    }
+                }
+                stage('WORLD') {
+                    when { changeset "${env.APP_WORLD}/**/*.java" }
+                    stages {
+                        stage ('Build') {
+                            steps {
+                                dir(env.APP_WORLD) {
+                                    sh 'mvn -B -DskipTests clean package'
+                                }
+                            }
+                        }
+                        stage ('Test') {
+                            steps {
+                                dir(env.APP_WORLD) {
+                                    sh 'mvn test'
+                                }
+                            }
+                            post {
+                                always {
+                                    junit '**/target/surefire-reports/*.xml'
+                                    archiveArtifacts '**/target/*.jar'
+                                }
+                            }
+                        }
+                        stage ('Deliver') {
+                            steps {
+                                echo "SUCCES"
+                                //sh './jenkins/scripts/deliver.sh'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
