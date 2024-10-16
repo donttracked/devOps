@@ -1,0 +1,103 @@
+pipeline {
+    agent any
+    options {
+        skipStagesAfterUnstable() // Пропускаем стадии для приложений, которые не изменялись
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                script {
+                    // Клонирование кода для каждого приложения
+                    parallel (
+                        'Checkout Hello-World': {
+                            dir('Hello-World') {
+                                git url: 'https://github.com/donttracked/devOps.git', branch: 'lesson26'
+                            }
+                        },
+                        'Checkout Hello-Jenkins': {
+                            dir('Hello-Jenkins') {
+                                git url: 'https://github.com/donttracked/devOps.git', branch: 'lesson26'
+                            }
+                        },
+                        'Checkout Hello-Devops': {
+                            dir('Hello-Devops') {
+                                git url: 'https://github.com/donttracked/devOps.git', branch: 'lesson26'
+                            }
+                        }
+                    )
+                }
+            }
+        }
+
+        stage('Build and Test') {
+            steps {
+                script {
+                    // Проверяем изменения и запускаем сборку и тестирование только для изменённых приложений
+                    parallel (
+                        'Build Hello-World': {
+                            when {
+                                changeset "Hello-World/**"
+                            }
+                            dir('Hello-World') {
+                                sh 'mvn clean verify'
+                            }
+                        },
+                        'Build Hello-Jenkins': {
+                            when {
+                                changeset "Hello-Jenkins/**"
+                            }
+                            dir('Hello-Jenkins') {
+                                sh 'mvn clean verify'
+                            }
+                        },
+                        'Build Hello-Devops': {
+                            when {
+                                changeset "Hello-Devops/**"
+                            }
+                            dir('Hello-Devops') {
+                                sh 'mvn clean verify'
+                            }
+                        }
+                    )
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    // Деплой только для тех приложений, которые были изменены
+                    parallel (
+                        'Deploy Hello-World': {
+                            when {
+                                changeset "Hello-World/**"
+                            }
+                            dir('Hello-World') {
+                                echo "deliver.sh SUCCESS"
+//                                 sh './jenkins/scripts/deliver.sh'
+                            }
+                        },
+                        'Deploy Hello-Jenkins': {
+                            when {
+                                changeset "Hello-Jenkins/**"
+                            }
+                            dir('Hello-Jenkins') {
+                                echo "deliver.sh SUCCESS"
+//                                 sh './jenkins/scripts/deliver.sh'
+                            }
+                        },
+                        'Deploy Hello-Devops': {
+                            when {
+                                changeset "Hello-Devops/**"
+                            }
+                            dir('Hello-Devops') {
+                                echo "deliver.sh SUCCESS"
+//                                 sh './jenkins/scripts/deliver.sh'
+                            }
+                        }
+                    )
+                }
+            }
+        }
+    }
+}
