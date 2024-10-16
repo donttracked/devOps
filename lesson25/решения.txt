@@ -1,0 +1,10 @@
+1. дает агенту доступ к
+
+    volumes:
+      - jenkins_home:/var/jenkins_home
+
+2. судя из доки https://plugins.jenkins.io/pipeline-maven/
+
+надо юзать пайплайн чтобы не мучится.
+
+3. в логах явно видим Running on maven-agent что выполнялось на узле агента.
